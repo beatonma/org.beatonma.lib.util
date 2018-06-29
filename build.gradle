@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+
+android {
+
+}
+
+dependencies {
+    implementation "androidx.annotation:annotation:$versions.androidx"
+}
