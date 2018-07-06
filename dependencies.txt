@@ -1,0 +1,7 @@
+androidx.annotation:annotation:1.0.0-alpha3
+
+androidx.databinding:databinding-common:3.3.0-alpha02
+androidx.databinding:databinding-runtime:3.3.0-alpha02
+androidx.databinding:databinding-adapters:3.3.0-alpha02
+
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.50
