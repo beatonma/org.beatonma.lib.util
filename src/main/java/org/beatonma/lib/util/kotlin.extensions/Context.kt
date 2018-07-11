@@ -1,7 +1,9 @@
 package org.beatonma.lib.util.kotlin.extensions
 
+import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.util.TypedValue
 import android.widget.Toast
 import androidx.annotation.ColorInt
@@ -9,6 +11,10 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import org.beatonma.lib.util.Sdk
+
+
+val Context.dp: Float
+    get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1F, resources.displayMetrics)
 
 /**
  * Return the pixel value of the given dp value
@@ -57,3 +63,17 @@ fun Context?.drawableCompat(@DrawableRes resId: Int): Drawable? {
         resources.getDrawable(resId)
     }
 }
+
+val Context?.accentColor: Int?
+    @TargetApi(LOLLIPOP)
+    get() {
+        if (this == null) return null
+        val typedValue = TypedValue()
+
+        val a = obtainStyledAttributes(typedValue.data, intArrayOf( android.R.attr.colorAccent ))
+        val color = a.getColor(0, 0)
+
+        a.recycle()
+
+        return color
+    }
