@@ -3,7 +3,7 @@ package org.beatonma.lib.util.kotlin.extensions
 /**
  * Replace the contents of this list with the contents of the other
  */
-fun <T> MutableList<T>.clone(source: MutableList<T>?) {
+fun <T> MutableList<T>.clone(source: List<T>?) {
     clear()
     if (source != null) addAll(source)
 }
