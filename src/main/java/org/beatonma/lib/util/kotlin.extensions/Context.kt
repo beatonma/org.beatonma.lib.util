@@ -15,6 +15,9 @@ import org.beatonma.lib.util.Sdk
 import kotlin.math.max
 import kotlin.math.min
 
+/**
+ * Pixel value for 1dp on current device
+ */
 val Context.dp: Float
     get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1F, resources.displayMetrics)
 
@@ -31,7 +34,7 @@ fun Context.getPrefs(name: String): SharedPreferences {
 }
 
 fun Context.toast(text: String, duration: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(this, text, duration).show()
+    Toast.makeText(this, text.trim(), duration).show()
 }
 
 fun Context.toast(@StringRes resId: Int, duration: Int = Toast.LENGTH_SHORT) {
@@ -102,3 +105,8 @@ val Context.deviceWidthDp: Int
 
 val Context.deviceHeightDp: Int
     get() = (deviceHeight / resources.displayMetrics.density).toInt()
+
+/**
+ * Convert pixel value to dp
+ */
+fun Context.pxToDp(px: Int): Int = (px / resources.displayMetrics.density).toInt()
