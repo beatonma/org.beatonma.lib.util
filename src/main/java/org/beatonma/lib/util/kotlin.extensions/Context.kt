@@ -15,6 +15,8 @@ import org.beatonma.lib.util.Sdk
 import kotlin.math.max
 import kotlin.math.min
 
+private const val DEFAULT_PREFS = "prefs"
+
 /**
  * Pixel value for 1dp on current device
  */
@@ -29,7 +31,7 @@ fun Context?.dp(value: Float = 1F): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, resources.displayMetrics)
 }
 
-fun Context.getPrefs(name: String): SharedPreferences {
+fun Context.getPrefs(name: String = DEFAULT_PREFS): SharedPreferences {
     return getSharedPreferences(name, Context.MODE_PRIVATE)
 }
 
