@@ -31,6 +31,10 @@ fun Context?.dp(value: Float = 1F): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, resources.displayMetrics)
 }
 
+fun Context?.dp(value: Int = 1): Int {
+    return dp(value.toFloat()).toInt()
+}
+
 fun Context.getPrefs(name: String = DEFAULT_PREFS): SharedPreferences {
     return getSharedPreferences(name, Context.MODE_PRIVATE)
 }
