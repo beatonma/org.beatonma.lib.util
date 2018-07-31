@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.res.TypedArray
 
 /**
- * Extensions for {@link TypedArray} to simplify reading of values that may be either linked as
+ * Extensions for [TypedArray] to simplify reading of values that may be either linked as
  * resources or given as literals
  */
 
