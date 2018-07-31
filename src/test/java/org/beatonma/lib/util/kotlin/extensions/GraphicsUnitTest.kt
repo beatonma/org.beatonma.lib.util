@@ -12,7 +12,7 @@ import org.mockito.Matchers.anyInt
 class GraphicsUnitTest {
     private fun createMockRect(): Rect {
         val rect = mock<Rect>()
-        whenever(rect.set(anyInt(), anyInt(), anyInt(), anyInt())).then{
+        whenever(rect.set(anyInt(), anyInt(), anyInt(), anyInt())).then {
             rect.left = it.getArgumentAt(0, Int::class.java) as Int
             rect.top = it.getArgumentAt(1, Int::class.java) as Int
             rect.right = it.getArgumentAt(2, Int::class.java) as Int
@@ -24,7 +24,7 @@ class GraphicsUnitTest {
 
     private fun createMockRectF(): RectF {
         val rect = mock<RectF>()
-        whenever(rect.set(anyFloat(), anyFloat(), anyFloat(), anyFloat())).then{
+        whenever(rect.set(anyFloat(), anyFloat(), anyFloat(), anyFloat())).then {
             rect.left = it.getArgumentAt(0, Float::class.java) as Float
             rect.top = it.getArgumentAt(1, Float::class.java) as Float
             rect.right = it.getArgumentAt(2, Float::class.java) as Float
