@@ -3,7 +3,6 @@
 package org.beatonma.lib.util.kotlin.extensions
 
 import android.graphics.drawable.Drawable
-import android.view.MenuItem
 import androidx.annotation.ColorInt
 import org.beatonma.lib.util.Sdk
 
