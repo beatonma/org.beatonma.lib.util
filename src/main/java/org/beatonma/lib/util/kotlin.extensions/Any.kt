@@ -20,3 +20,12 @@ fun Any?.log(message: String?, loglevel: Char = 'd') {
         'w' -> Log.w(autotag, fullText)
     }
 }
+
+/**
+ * Dump value to log (with optional message) and return `this` value
+ * Convenience for `.also { println("$it") }`
+ * Should only be used for debugging purposes
+ */
+fun <T> T.dump(message: String = ""): T {
+    return also { println("${if (message.isNotEmpty()) "$message " else "" } $it") }
+}
