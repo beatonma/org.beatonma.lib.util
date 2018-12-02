@@ -35,8 +35,8 @@ fun Context?.dp(value: Int = 1): Int {
     return dp(value.toFloat()).toInt()
 }
 
-fun Context.getPrefs(name: String = DEFAULT_PREFS): SharedPreferences {
-    return getSharedPreferences(name, Context.MODE_PRIVATE)
+fun Context.getPrefs(name: String = DEFAULT_PREFS, mode: Int = Context.MODE_PRIVATE): SharedPreferences {
+    return getSharedPreferences(name, mode)
 }
 
 fun Context.toast(text: String, duration: Int = Toast.LENGTH_SHORT) {
